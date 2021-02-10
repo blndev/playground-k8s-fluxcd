@@ -1,0 +1,28 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: GitRepository
+metadata:
+  name: flux-system
+  namespace: flux-system
+spec:
+  gitImplementation: go-git
+  interval: 1m0s
+  ref:
+    branch: main
+  timeout: 20s
+  url: https://github.com/blndev/playground-k8s-fluxcd.git
+
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+kind: Kustomization
+metadata:
+  name: flux-system
+  namespace: flux-system
+spec:
+  interval: 10m0s
+  path: ./clusters/demo-cluster
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+
