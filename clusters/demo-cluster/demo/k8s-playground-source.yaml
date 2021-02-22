@@ -8,5 +8,5 @@ spec:
   interval: 30s
   ref:
     branch: production
-  url: https://github.com/blndev/kubernetes-playground.git
+  url: https://github.com/blndev/kubernetes-playground
 
