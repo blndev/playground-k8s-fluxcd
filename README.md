@@ -133,6 +133,10 @@ Changes could be build with flux or by hand.
 
 We will install a simple Podinfo App (WebUI which shows info about the running pod)
 As this repo is providing an kustomize file we can simple reference it.
+
+If there is only a kubernets file on the path, the Kustomize controller will generate a kusomization - file.
+See: https://github.com/fluxcd/kustomize-controller/blob/main/docs/spec/v1beta1/README.md
+
 ```bash
 flux create source git podinfo \
   --url=https://github.com/stefanprodan/podinfo \
