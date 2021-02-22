@@ -10,5 +10,5 @@ spec:
   prune: true
   sourceRef:
     kind: GitRepository
-    name: podinfo
+    name: k8s-playground
   validation: client
